@@ -4,7 +4,6 @@ const validateCorporativeEmail = (email: string): boolean => {
     email,
   })
 
-  // Validate if correct email
   if(!email.includes('@')) {
     console.error({
       message: 'Invalid email',
@@ -14,7 +13,6 @@ const validateCorporativeEmail = (email: string): boolean => {
     return false
   }
 
-  // Validate email is corporative
   const genericDomains = [
     'gmail.com',
     'hotmail.com',
@@ -28,8 +26,8 @@ const validateCorporativeEmail = (email: string): boolean => {
     'protonmail.com'
   ]
 
-  // Verify domain in generic domains
   const emailDomain = email.split('@')[1]
+
   if (genericDomains.includes(emailDomain)) {
     console.error({
       message: 'Email is not corporative',
@@ -46,7 +44,5 @@ const validateCorporativeEmail = (email: string): boolean => {
 
   return true
 }
-
-validateCorporativeEmail('contato@umaletra.com')
 
 export default validateCorporativeEmail

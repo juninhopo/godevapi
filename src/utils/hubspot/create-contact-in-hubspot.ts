@@ -11,13 +11,10 @@ export type Contact = {
 }
 
 const createContactInHubSpot = async (data: Contact) => {
-  // Validate if contact is corporative email
   validateCorporativeEmail(data.email)
 
-  // Validate if contact is already in HubSpot 
   const is_contact = await validateAlreadyContact(data.email)
 
-  // Upload contact to HubSpot
   if (!is_contact) {
     await putContactInHubSpot(data)
   } else {
