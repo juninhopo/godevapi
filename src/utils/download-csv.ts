@@ -1,7 +1,8 @@
 import axios from "axios"
 import Papa from "papaparse"
+import { Contact } from "./put-contact-to-hubspot"
 
-const downloadCsv = async (sheetUrl: string) => {
+const downloadCsv = async (sheetUrl: string): Promise<Contact[] | undefined>=> {
   console.log({
     message: 'Init flow download csv',
   })
@@ -16,12 +17,18 @@ const downloadCsv = async (sheetUrl: string) => {
     skipEmptyLines: true,
   })
 
+  if(!parsedData) {
+    console.error({
+      message: 'Error downloading contact data',
+    })
+    return undefined
+  }
+
   console.log({
-    message: 'Download csv',
-    parsedData: parsedData.data,
+    message: 'Finish download csv',
   })
 
-  return parsedData.data
+  return parsedData.data as Contact[]
 
   } catch (error) {
     console.error({
