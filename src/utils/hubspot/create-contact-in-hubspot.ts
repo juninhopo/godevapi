@@ -23,7 +23,6 @@ const createContactInHubSpot = async (data: Contact) => {
   } else {
     console.log({
       message: 'Contact already in HubSpot',
-      data,
     })
 
     return

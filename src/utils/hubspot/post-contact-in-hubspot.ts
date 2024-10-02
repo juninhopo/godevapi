@@ -5,7 +5,6 @@ const putContactInHubSpot = async (data: Contact) => {
   try {
     console.log({
       message: 'Uploading contact to HubSpot',
-      data,
     })
 
     await axios.post(

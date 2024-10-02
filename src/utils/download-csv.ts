@@ -1,6 +1,6 @@
 import axios from "axios"
 import Papa from "papaparse"
-import { Contact } from "./put-contact-to-hubspot"
+import { Contact } from "./hubspot/create-contact-in-hubspot"
 
 const downloadCsv = async (sheetUrl: string): Promise<Contact[] | undefined>=> {
   console.log({
