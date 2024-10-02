@@ -31,3 +31,17 @@ Execute o comando no terminal para executar o script
 ```bash
 npm start
 ```
+
+# Testes Unitários
+
+Execute o comando abaixo para verificar todos os testes unitários do projeto
+
+```bash
+npm run test:coverage
+```
+
+Execute o comando abaixo para ter uma visualização melhor de como está os testes unitários do projeto
+
+```bash
+open coverage/lcov-report/index.html
+```

@@ -17,6 +17,8 @@ const createContactInHubSpot = async (data: Contact) => {
 
   if (!is_contact) {
     await putContactInHubSpot(data)
+
+    return
   } else {
     console.log({
       message: 'Contact already in HubSpot',

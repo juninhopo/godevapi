@@ -24,6 +24,8 @@ const putContactInHubSpot = async (data: Contact) => {
         }
       },
     )
+
+    return
   } catch (error: any) {
     console.error({
       message: 'Error on put contact in HubSpot',

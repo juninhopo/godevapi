@@ -24,13 +24,19 @@ const exportContactsToHubSpot = async () => {
       message: 'Uploading contact to HubSpot',
     })
 
-    await createContactInHubSpot({
-      company: contact.company,
-      name: contact.name,
-      email: contact.email,
-      phone: contact.phone,
-      site: contact.site,
-    })
+    try {
+      await createContactInHubSpot({ company: contact.company,
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone,
+        site: contact.site,
+      })
+    } catch (error) {
+      console.error({
+        message: 'Error on create contact in HubSpot',
+        error,
+      })
+    }
   } 
 }
 
